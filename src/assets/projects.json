@@ -1,0 +1,19 @@
+[{
+  "id": 1,
+  "internalProject": true,
+  "company": "Apple"
+}, {
+  "id": 2,
+  "internalProject": false,
+  "company": "Windows"
+},
+{
+  "id": 3,
+  "internalProject": false,
+  "company": "Wix"
+},
+{
+  "id": 4,
+  "internalProject": true,
+  "company": "Uniandes"
+}]

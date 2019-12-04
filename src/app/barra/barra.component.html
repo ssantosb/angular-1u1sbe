@@ -1,0 +1,42 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#">
+<h2 class="mainTitle">Sitios Web</h2>
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link active" routerLink="projects/list" routerLinkActive="active">Project</a>
+    </li>
+    <li class ="nav-item active">
+        <a class = "nav-link disable" routerLink="requests/list" routerLinkActive="active">Requests</a>
+      </li>
+    <li class="nav-item active">
+      <a class="nav-link active" routerLink="requesters/list" routerLinkActive="active">Requester</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link active" routerLink="developers/list" routerLinkActive="active">Developer</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link active" routerLink="auth/login" routerLinkActive="active" *ngxPermissionsOnly="['GUEST']" >Login</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link active" routerLink="auth/sign-up" routerLinkActive="active" *ngxPermissionsOnly="['GUEST']" >SignUp</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link active" routerLink="admin/mod" routerLinkActive="active" *ngxPermissionsOnly="['ADMIN']" >Modify data</a>
+    </li>
+    <div class="flex-row" *ngxPermissionsOnly="['DEVELOPER','REQUESTER', 'ADMIN']">
+        <div class="form-inline">
+            <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
+        </div>
+    </div>
+  </ul>
+</div>
+</nav>

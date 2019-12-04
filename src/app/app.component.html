@@ -1,4 +1,26 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="container-fluid">
+
+
+  <div class="row">
+    <div class="col-12" >
+      <app-barra></app-barra>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" >
+       <router-outlet></router-outlet>
+         </div>
+       <div class="col" >
+      <router-outlet name="detail"></router-outlet>
+      <router-outlet name="create"></router-outlet>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12" >
+      <app-pie></app-pie>
+    </div>
+  </div>
+
+</div>

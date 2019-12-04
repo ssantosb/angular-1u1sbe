@@ -1,0 +1,31 @@
+
+.developersHeader{
+    position: absolute;
+  top: 10.5rem;
+  left: 10%;
+  opacity: 0;
+  animation-name: fadeInOut;
+  animation-delay: 8.5s;
+  animation-duration: 9s;
+}
+table{
+    
+    align-content: center;
+    align-self: auto;
+}
+tr{
+    text-align: center;
+}
+@keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+  
+    45% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0%;
+    }
+  }

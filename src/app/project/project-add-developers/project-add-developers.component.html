@@ -1,0 +1,32 @@
+<div id="collapseReview" [ngbCollapse]="isCollapsed">
+        <div cdkDropListGroup>
+                <div class="example-container">
+                  <h2>Available developers</h2>
+              
+                  <div
+                    cdkDropList
+                    [cdkDropListData]="filteredDevelopers"
+                    class="example-list"
+                    cdkDropListSortingDisabled
+                    (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let id of filteredDevelopers" cdkDrag>{{id.name}}</div>
+                  </div>
+                </div>
+              
+                <div class="example-container">
+                  <h2>Developers to add</h2>
+              
+                  <div
+                    cdkDropList
+                    [cdkDropListData]="finalDevelopers"
+                    class="example-list"
+                    cdkDropListSortingDisabled
+                    (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let fd of finalDevelopers" cdkDrag>{{fd.name}}</div>
+                  </div>
+                </div>
+          </div>
+          <div>
+              <button class="small" (click)="onSelectAddDevelopers()">Add Developers to Project</button>
+            </div>
+</div>

@@ -1,0 +1,11 @@
+{
+"id": 1,
+"developers":[
+    {"id":1,"login":"d.galindo", "email":"d@gmail.com", "phone":"033030" },
+    {"id":2,"login":"d.delcastillo", "email":"dde@gmail.com", "phone":"122312" },
+    {"id":3,"login":"af.orozco", "email":"af@gmail.com", "phone":"2523532" }
+
+
+  ]
+  }
+  

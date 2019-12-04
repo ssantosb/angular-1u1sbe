@@ -1,0 +1,24 @@
+[{
+    "id": 1,
+    "login": "usuar1",
+    "email": "usuar@ejemplo.com",
+    "phone": "3206745567"
+  },{
+    "id": 2,
+    "login": "usuar2",
+    "email": "usuar@ejemplo.com",
+    "phone": "3206745567"
+  },
+  {
+    "id": 3,
+    "login": "usuar3",
+    "email": "usuar@ejemplo.com",
+    "phone": "3206745567"
+  },
+  {
+    "id": 4,
+    "login": "usuar4",
+    "email": "usuar@ejemplo.com",
+    "phone": "3206745567"
+  }
+  ]

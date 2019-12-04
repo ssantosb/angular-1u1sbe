@@ -1,0 +1,14 @@
+<table class="table table-striped" id="units">
+    <thead >
+        <tr>
+            <th>Units</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let e of units">
+          <td ><a class="nav-link" [routerLink]="['/units',{outlets:{'detail':[e.id]}}]" routerLinkActive="active">{{e.name}}</a></td>
+        </tr>
+
+    </tbody>
+</table>
+<button class="button mx-sm-3 mb-2" [routerLink]="['/units',{outlets:{'detail':'agregar'}}]" >Agregar nuevo Unit</button>

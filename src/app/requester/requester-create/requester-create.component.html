@@ -1,0 +1,61 @@
+
+    <form [formGroup]="requesterForm" (ngSubmit)="!requesterForm.invalid &&createRequester(requesterForm.value)">
+
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="name">
+            Name
+          </label>
+          <input novalidate id="name" class="form-control" formControlName="name" placeholder="Name of the requester">
+        </div>
+      
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="login">
+            Login
+          </label>
+          <input novalidate id="login" class="form-control" formControlName="login" placeholder="Login of the requester">
+        </div>
+      
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="email">
+            Email
+          </label>
+          <input novalidate id="email" class="form-control" formControlName="email" placeholder="Email of the requester">
+        </div>
+      
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="phone">
+            Phone
+          </label>
+          <input novalidate id="phone" class="form-control" formControlName="phone" placeholder="Phone of the requester">
+        </div>
+      
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="image">
+              Image
+            </label>
+            <input novalidate id="image" class="form-control" formControlName="image" placeholder="Image of the requester [OPTIONAL]">
+          </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="requesterUnit">Choose the requester's unit</label>
+    <select class="custom-select" [(ngModel)]="requester.unit" formControlName="unitSelect" id="requesterUnit" required>
+      <option [ngValue]="u" *ngFor="let u of units">
+        {{u.name}}
+      </option>
+    </select>
+    <div class="invalid-feedback">
+      <div>The requester's unit is missing</div>
+    </div>
+  </div>
+
+        
+  <div class="form-group mx-sm-3 mb-2">
+      <label for="password">
+        Password
+      </label>
+      <input novalidate id="password" class="form-control" formControlName="password" placeholder="Password" type="password">
+    </div>
+
+  <button class="button mx-sm-3 mb-2" type="submit" [disabled]="requesterForm.invalid">Create</button>
+
+</form>

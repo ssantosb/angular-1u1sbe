@@ -1,0 +1,9 @@
+{
+  "id": 1,
+"name": "IBM",
+"projects":[
+  { "company":"Ford", "id":1 },
+  { "company":"BMW", "id":2 },
+  { "company":"Fiat", "id":3 }
+]
+}

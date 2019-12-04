@@ -1,0 +1,66 @@
+<div id="collapseAddIteration" [ngbCollapse]="isCollapsed">
+    <div class="container-fluid">
+        <h3>Agregar una iteración</h3>
+        <form name="post" (ngSubmit)="iterationForm.valid && postIteration(iterationForm)" #iterationForm="ngForm" novalidate>
+              <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="iterationObjetive"><b>Objetive</b></label>
+                        <input type="text" name="iterationObjetive" class="form-control" id="iterationObjetive" [(ngModel)]="iteration.objetive"
+                               #iterationObjetive="ngModel" [ngClass]="{ 'is-invalid': iterationForm.submitted && iterationObjetive.invalid }" required>
+                               <div class="invalid-feedback">
+                            <div>The iteration's objetive is missing</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="iterationvalidationDate"><b>Iteration validation date</b></label>
+                    <div [ngClass]="{ 'is-invalid': iterationForm.submitted && iterationvalidationDate.invalid }">
+                        <input class="form-control" id="iterationvalidationDate" name="iterationvalidationDate" [(ngModel)]="iteration.validationDate"
+                            ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #iterationvalidationDate="ngModel" [ngClass]="{'is-invalid': (iterationvalidationDate.untouched || iterationvalidationDate.invalid) }"
+                            required>
+                        <div class="invalid-feedback">
+                            <div>The iteration's validation date is missing</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="iterationChanges"><b>changes</b></label>
+                        <textarea name="iterationChanges" class="form-control" id="iterationChanges" [(ngModel)]="iteration.changes"
+                                  #iterationChanges="ngModel" [ngClass]="{ 'is-invalid': iterationForm.submitted && iterationChanges.invalid }"
+                                  required></textarea>
+                        <div class="invalid-feedback">
+                            <div>The iteration's changes is missing</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="iterationBeginDate"><b>Iteration begin date</b></label>
+                    <div [ngClass]="{ 'is-invalid': iterationForm.submitted && iterationBeginDate.invalid }">
+                        <input class="form-control" id="iterationBeginDate" name="iterationBeginDate" [(ngModel)]="iteration.beginDate"
+                            ngbDatepicker #w="ngbDatepicker" (click)="w.toggle()" #iterationBeginDate="ngModel" [ngClass]="{'is-invalid': (iterationBeginDate.untouched || iterationBeginDate.invalid) }"
+                            required>
+                        <div class="invalid-feedback">
+                            <div>The iteration's begin date is missing</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="iterationEndDate"><b>Iteration end date</b></label>
+                    <div [ngClass]="{ 'is-invalid': iterationForm.submitted && iterationEndDate.invalid }">
+                        <input class="form-control" id="iterationEndDate" name="iterationEndDate" [(ngModel)]="iteration.endDate"
+                            ngbDatepicker #q="ngbDatepicker" (click)="q.toggle()" #iterationEndDate="ngModel" [ngClass]="{'is-invalid': (iterationEndDate.untouched || iterationEndDate.invalid) }"
+                            required>
+                        <div class="invalid-feedback">
+                            <div>The iteration's end date is missing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Post iteration</button>
+            </div>
+        </form>
+    </div>
+</div>

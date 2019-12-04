@@ -1,0 +1,21 @@
+<form [formGroup]="unitForm" (ngSubmit)="!unitForm.invalid && createUnit(unitForm.value)">
+
+	<div class="form-group mx-sm-3 mb-2">
+		<label for="name">
+      Unit Name
+    </label>
+		<input novalidate
+    id="name"
+    class="form-control"
+      formControlName="name"
+      placeholder="">
+
+		<div class="alert alert-danger alert-dismissible fade show"
+			*ngIf="unitForm.get('name').hasError('required') && unitForm.get('name').touched">
+			Name required
+		</div>
+	</div>
+
+		<button class="button mx-sm-3 mb-2" type="submit">Create</button>
+
+</form>

@@ -1,0 +1,64 @@
+<form [formGroup]="hardwareForm" (ngSubmit)="!hardwareForm.invalid &&createHardware(hardwareForm.value)">
+
+   <div class="form-group mx-sm-3 mb-2">
+    <label for="ip">
+      Ip
+    </label>
+    <input novalidate
+      id="ip"
+      class="form-control"
+      formControlName="ip"
+      placeholder="Ip of hardware">
+   </div>
+
+   <div class="form-group mx-sm-3 mb-2">
+    <label for="cores">
+      Cores
+    </label>
+    <input novalidate
+      id="cores"
+      class="form-control"
+      formControlName="cores"
+      placeholder="Cores of hardware">
+   </div>
+
+   <div class="form-group mx-sm-3 mb-2">
+    <label for="ram">
+      Ram
+    </label>
+    <input novalidate
+      id="ram"
+      class="form-control"
+      formControlName="ram"
+      placeholder="Ram of hardware">
+   </div>
+
+   <div class="form-group mx-sm-3 mb-2">
+    <label for="cpu">
+      Cpu
+    </label>
+    <input novalidate
+      id="cpu"
+      class="form-control"
+      formControlName="cpu"
+      placeholder="Cpu of hardware">
+   </div>
+
+   <div class="form-group mx-sm-3 mb-2">
+    <label for="plataforma">
+      Plataforma
+    </label>
+    <input novalidate
+      id="plataforma"
+      class="form-control"
+      formControlName="plataforma"
+      placeholder="Plataforma of hardware">
+   </div>
+
+   
+
+
+
+  <button class="button mx-sm-3 mb-2" type="submit" [disabled]="hardwareForm.invalid">Submit</button>
+
+</form>

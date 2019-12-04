@@ -1,0 +1,19 @@
+<div class="container-fluid">
+	<div class="col">
+<div class="card" style="width: 18rem;" *ngFor="let h of hardwares">
+			<a class="figure-caption" [routerLink] ="['/hardwares', { outlets: { 'detail': [h.id] } }]" > <img src="https://www.esun.edu.pe/assets/img/courses/comp-info.jpg" class="card-img-top" alt="..."></a>
+  <div class="card-body" >
+    <h5 class="card-title">Hardware id {{h.id}}</h5>
+    <h5 class="card-body">Ip: {{h.ip}}</h5>
+
+  </div>
+
+</div>
+
+</div>
+
+        <div>
+            <button class="small" (click)="onSelectCreate()">Add Hardware</button>
+          </div>
+
+</div>

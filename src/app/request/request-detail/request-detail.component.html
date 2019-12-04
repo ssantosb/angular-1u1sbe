@@ -1,0 +1,27 @@
+<div class="col-md-12">
+        <div class="container-fluid">   
+          <p class="h3 p-3">Request {{request_id}}</p>
+          <table class="table table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Description</th>
+                    <th>Unit</th>
+                    <th>Begin Date</th>
+                    <th>Due Date</th>
+                    <th>End Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{requestDetail.description}}</td> 
+                    <td>{{requestDetail.unit}}</td>
+                    <td>{{requestDetail.beginDate}}</td>
+                    <td>{{requestDetail.dueDate}}</td>
+                    <td>{{requestDetail.endDate}}</td>
+                  </tr>
+          
+              
+                </tbody>
+              </table>
+        </div>
+</div>

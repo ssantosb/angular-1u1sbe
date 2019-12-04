@@ -1,0 +1,56 @@
+<form [formGroup]="projectForm" (ngSubmit)="!projectForm.invalid &&createProject(projectForm.value)">
+
+   <div class="form-group mx-sm-3 mb-2">
+    <label for="company">
+      Company
+    </label>
+    <input novalidate
+      id="company"
+      class="form-control"
+      formControlName="company"
+      placeholder="Company in charge of project">
+   </div>
+
+   <div class="form-group  mx-sm-3 mb-2">
+    <label for="internalProject">
+      Is it Internal Project?
+    </label>
+   <input id="internalProject" type="text"
+     class="form-control"
+     formControlName="internalProject"
+     placeholder="Say true or false">
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+      <label for="projectProvider">Choose the project's provider</label>
+      <select class="custom-select"  [(ngModel)] = "project.provider" formControlName="providerSelect"  id="projectProvider"
+          required>
+          <option [ngValue]="p" *ngFor="let p of providers">
+            {{p.name}}
+          </option>
+      </select>
+      <div class="invalid-feedback">
+          <div>The project's provider is missing</div>
+      </div>
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+      <label for="projectLeader">Choose the project's leader</label>
+      
+      <select class="custom-select" [(ngModel)] = "project.leader" formControlName="leaderSelect"  id="projectLeader"
+          required>
+          <option [ngValue]="l" *ngFor="let l of leaders">
+            
+              {{l.name}}
+         
+       
+          </option>
+      </select>
+      <div class="invalid-feedback">
+          <div>The project's leader is missing</div>
+      </div>
+  </div>
+
+  <button class="button mx-sm-3 mb-2" type="submit" [disabled]="projectForm.invalid">Submit</button>
+
+</form>

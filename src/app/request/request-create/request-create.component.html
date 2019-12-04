@@ -1,0 +1,83 @@
+<form [formGroup]="requestForm" (ngSubmit)="!requestForm.invalid &&createRequest(requestForm.value)">
+
+        <div class="form-group mx-sm-3 mb-2">
+         <label for="name">
+           Name
+         </label>
+         <input 
+           id="name"
+           class="form-control"
+           formControlName="name"
+           placeholder="Name of your request">
+        </div>
+     
+        <div class="form-group  mx-sm-3 mb-2">
+            <label for="purpose">
+              What is the purpose of you request?
+            </label>
+            <input id="purpose" type="text"
+              class="form-control"
+              formControlName="purpose"
+              placeholder="Your request's purpose">
+        </div>
+        
+        <div class="form-group  mx-sm-3 mb-2">
+            <label for="description">
+                Describe your request
+            </label>
+            <input id="description" type="text"
+              class="form-control"
+              formControlName="description"
+              placeholder="Your request's description">
+        </div>
+                    
+        <div class="form-group  mx-sm-3 mb-2">
+            <label for="budget">
+               What is your request's budget?
+            </label>
+            <input id="budget" type="number"
+              class="form-control"
+              formControlName="budget"
+              placeholder="Your request's budget">
+        </div>  
+
+        <div class="form-group">
+             <label for="beginDate">When do you expect your request to begin?</label>
+                <div [ngClass]="{ 'is-invalid': requestForm.submitted && beginDate.invalid }">
+                    <input class="form-control" id="beginDate" name="beginDate" [(ngModel)]="request.beginDate"
+                        ngbDatepicker #w="ngbDatepicker" (click)="w.toggle()" #beginDate="ngModel" [ngClass]="{'is-invalid': (beginDate.untouched || beginDate.invalid) }"
+                        required>
+                    <div class="invalid-feedback">
+                        <div>The request's begin date is missing</div>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="dueDate">What's your due date for your request?</label>
+                <div [ngClass]="{ 'is-invalid': requestForm.submitted && dueDate.invalid }">
+                    <input class="form-control" id="dueDate" name="dueDate" [(ngModel)]="request.dueDate"
+                        ngbDatepicker #q="ngbDatepicker" (click)="q.toggle()" #dueDate="ngModel" [ngClass]="{'is-invalid': (dueDate.untouched || dueDate.invalid) }"
+                        required>
+                    <div class="invalid-feedback">
+                        <div>The request's due date is missing</div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="endDate">When do you expect your request to end?</label>
+                <div [ngClass]="{ 'is-invalid': requestForm.submitted && endDate.invalid }">
+                    <input class="form-control" id="endDate" name="endDate" [(ngModel)]="request.endDate"
+                        ngbDatepicker #r="ngbDatepicker" (click)="r.toggle()" #endDate="ngModel" [ngClass]="{'is-invalid': (endDate.untouched || endDate.invalid) }"
+                        required>
+                    <div class="invalid-feedback">
+                        <div>The request's end date is missing</div>
+                    </div>
+                </div>
+        </div>
+
+     
+       <button class="button mx-sm-3 mb-2" type="submit" [disabled]="requestForm.invalid">Submit</button>
+     
+     </form>

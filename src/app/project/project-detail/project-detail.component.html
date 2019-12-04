@@ -1,0 +1,48 @@
+<div class="col-md-12">
+  <div class="container-fluid">   
+    <p class="h3 p-3">El project # {{projectid}}</p>
+ 
+  <div >
+    <div class="row">
+        <div class="col-md-3">
+            <p *ngIf="projectDetail.iterations.length > 0">
+                <button type="button" class="btn" [ngClass]="{ 'btn-primary': iterationListComponent.isCollapsed,'btn-outline-primary':!iterationListComponent.isCollapsed}" (click)="toggleIterations()">
+                        Iterations of the project
+            </button>
+            </p>
+        </div>
+    <div class="col-md-3">
+        <p>
+            <button type="button" class="btn" [ngClass]="{ 'btn-primary': iterationAddComponent.isCollapsed,'btn-outline-primary':!iterationAddComponent.isCollapsed}" (click)="toggleCreateIteration()">
+                    Create a Iteration
+            </button>
+        </p>
+    </div>
+    <app-project-iterations [projectIterations]="projectDetail.iterations"></app-project-iterations>
+    <app-project-add-iteration [project]="projectDetail" (updateIterations)="updateIterations()"></app-project-add-iteration>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+        <p *ngIf = "projectDetail.developers.length > 0">
+            <button type="button" class="btn" [ngClass]="{ 'btn-primary':developerListComponent.isCollapsed,'btn-outline-primary':!developerListComponent.isCollapsed}" (click)="toggleDevelopers()">
+                    Developers of the Project
+            </button>
+        </p>
+    </div>
+    <div class="col-md-3">
+        <p>
+            <button type="button" class="btn" [ngClass]="{ 'btn-primary': developerAddComponent.isCollapsed,'btn-outline-primary':!developerAddComponent.isCollapsed}" (click)="toggleCreateDevelopers()">
+                    Add Developers
+            </button>
+        </p>
+    </div>
+    <app-project-developers [projectDevelopers]="projectDetail.developers"></app-project-developers>
+    <app-project-add-developer [projectDetail]="projectDetail" ></app-project-add-developer>
+  </div>
+    
+  </div>
+
+  
+<br>
+    </div>
+</div>

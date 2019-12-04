@@ -1,0 +1,26 @@
+<div id="collapseReview" [ngbCollapse]="isCollapsed">
+        <table class="table table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Login</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor = "let d of projectDevelopers">
+
+                    <td>{{d.id}}</td>
+                    <td>{{d.name}}</td>
+                    <td>{{d.login}}</td>
+                    <td>{{d.phone}}</td>
+                    <td>{{d.email}}</td>
+
+                  </tr>
+          
+                </tbody>
+              </table>
+    </div>

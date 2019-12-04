@@ -1,0 +1,58 @@
+<form [formGroup]="developerForm" (ngSubmit)="!developerForm.invalid &&createDeveloper(developerForm.value)">
+
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="name">
+      Name
+    </label>
+    <input novalidate id="name" class="form-control" formControlName="name" placeholder="Name of the developer">
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="login">
+      Login
+    </label>
+    <input novalidate id="login" class="form-control" formControlName="login" placeholder="Login of the developer" >
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="email">
+      Email
+    </label>
+    <input novalidate id="email" class="form-control" formControlName="email" placeholder="Email of the developer">
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="phone">
+      Phone
+    </label>
+    <input novalidate id="phone" class="form-control" formControlName="phone" placeholder="Phone of the developer">
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+      <label for="image">
+        Image
+      </label>
+      <input novalidate id="image" class="form-control" formControlName="image" placeholder="Image of the developer [OPTIONAL]">
+    </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+  <label>Is a leader? </label>
+    <label>
+        <input type="radio" name="leader" formControlName="leader" [value]="true" />Yes
+    </label>
+    <label>
+        <input type="radio" name="leader" formControlName="leader" [value]="false" />No
+    </label>
+  </div>
+
+        
+  <div class="form-group mx-sm-3 mb-2">
+      <label for="password">
+        Password
+      </label>
+      <input novalidate id="password" class="form-control" formControlName="password" placeholder="Password" type="password">
+    </div>
+
+  <button class="button mx-sm-3 mb-2" type="submit" [disabled]="developerForm.invalid">Create</button>
+
+</form>

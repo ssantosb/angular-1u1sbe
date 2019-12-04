@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="col-md-2">
+    <h2>Projects</h2>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>Company</th>
+          <th>Internal Project</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let p of projects">
+          <td><a class="nav-link" [routerLink]="['/projects',{outlets:{'detail':[p.id]}}]" routerLinkActive="active">{{p.id}}</a></td> 
+          <td>{{p.company}}</td>
+          <td>{{p.internalProject}}</td>
+         
+        </tr>
+
+    
+      </tbody>
+    </table>
+  
+        <button class="button mx-sm-3 mb-2" [routerLink]="['/projectos',{outlets:{'detail':'agregar'}}]" roterLinkActive = "active">Add project</button>
+  
+  </div>
