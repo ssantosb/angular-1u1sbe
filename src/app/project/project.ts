@@ -33,5 +33,8 @@ export class Project {
     */
    provider:Provider;
 
-
+   /**
+    * Project's name
+    */
+   name:String;
 }

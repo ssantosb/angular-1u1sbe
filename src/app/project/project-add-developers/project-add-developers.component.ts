@@ -109,9 +109,11 @@ export class ProjectAddDeveloperComponent implements OnInit {
         this.projectService.updateProject(this.projectDetail).subscribe(()=>{
             this.updateDevelopers.emit();
             this.toastrService.success("The project was successfully updated", "Project Updated");
-        }, err => {
-            this.toastrService.error(err, "Error");
-        });
+        }, 
+        //err => {
+         //   this.toastrService.error(err, "Error");
+       // }
+        );
         for(let dev of this.finalDevelopers){
             this.developerService.getDeveloperDetail(dev.id).subscribe(newDev => {
                 newDev.projects.push(this.projectDetail);

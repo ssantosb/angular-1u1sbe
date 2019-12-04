@@ -1,5 +1,17 @@
 <form [formGroup]="projectForm" (ngSubmit)="!projectForm.invalid &&createProject(projectForm.value)">
 
+  
+    <div class="form-group mx-sm-3 mb-2">
+        <label for="name">
+          Project's Name
+        </label>
+        <input novalidate
+          id="name"
+          class="form-control"
+          formControlName="name"
+          placeholder="Name of the project">
+       </div>
+    
    <div class="form-group mx-sm-3 mb-2">
     <label for="company">
       Company
